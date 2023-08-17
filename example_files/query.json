@@ -1,0 +1,36 @@
+{
+    "query": {
+        "bool": {
+            "must": [
+                {
+                    "term": {
+                        "cvrNummer": {
+                            "value": "31757207"
+                        }
+                    }
+                },
+                {
+                    "term": {
+                        "dokumenter.dokumentMimeType": "application"
+                    }
+                },
+                {
+                    "term": {
+                        "dokumenter.dokumentMimeType": "xml"
+                    }
+                },
+                {
+                    "range": {
+                        "offentliggoerelsesTidspunkt": {
+                            "gt": "2000-01-01T00:00:00.001Z",
+                            "lt": "2023-12-31T23:59:59.505Z"
+                        }
+                    }
+                }
+            ],
+            "must_not": [],
+            "should": []
+        }
+    },
+    "size": 2999
+}
